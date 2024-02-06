@@ -6,23 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-/**
- * Class Pizza
- *
- * @package App\Models
- *
- * @property int $id
- * @property int $user_id
- * @property string $size
- * @property string $crust
- * @property array $toppings
- * @property string $status
- * @property \Illuminate\Support\Carbon $created_at
- * @property \Illuminate\Support\Carbon $updated_at
- * @property-read \App\Models\User $user
- * @property-read string $chef
- * @property-read string $last_updated
- */
+
 class Pizza extends Model
 {
     use HasFactory;
