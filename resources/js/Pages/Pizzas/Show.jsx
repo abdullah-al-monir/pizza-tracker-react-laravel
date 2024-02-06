@@ -2,17 +2,19 @@ import React, { useEffect } from "react";
 import { Head, router } from "@inertiajs/react";
 import PizzaStatus from "./Partials/PizzaStatus";
 const Show = ({ pizza }) => {
-    useEffect(() => {
-        const interval = setInterval(() => {}, 1000);
-        router.reload({ only: ["pizza"] });
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         router.reload({ only: ["pizza"] });
+    //     }, 1000);
 
+    //     return () => {
+    //         clearInterval(interval);
+    //     };
+    // }, []);
+   
     return (
         <div className="max-w-3xl mx-auto py-12">
-            <Head title={"Order Numer " + pizza.id} />
+            <Head title={"Order Number " + pizza.id} />
             <div className="py-8">
                 <img
                     className="mx-auto"

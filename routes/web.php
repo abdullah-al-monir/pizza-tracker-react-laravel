@@ -34,6 +34,7 @@ Route::get('/dashboard', function () {
 Route::get('/order/{pizza}', [PublicPizzaController::class, 'show'])->name('public.pizzas.show');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/orders', [PizzaController::class, 'index'])->name('orders.index');
     Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index');
     Route::get('/pizzas/{pizza}', [PizzaController::class, 'edit'])->name('pizzas.edit');
     Route::patch('/pizzas/{pizza}', [PizzaController::class, 'update'])->name('pizzas.update');

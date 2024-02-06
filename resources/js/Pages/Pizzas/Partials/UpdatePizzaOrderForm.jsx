@@ -20,6 +20,8 @@ const UpdatePizzaOrderForm = ({ pizza, className = "" }) => {
         patch(route("pizzas.update", pizza.id), {
             preserveScroll: true,
         });
+
+        
     };
     const statusOptions = [
         "Ordered",
