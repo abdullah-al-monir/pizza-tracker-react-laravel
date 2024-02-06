@@ -5,10 +5,16 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 
-return new class extends Migration
-{
+/**
+ * Class CreatePizzasTable
+ *
+ * @package Database\Migrations
+ */
+return new class extends Migration {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
     public function up(): void
     {
@@ -17,7 +23,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->string('size');
             $table->string('crust');
-            $table->string('toppings');
+            $table->json('toppings');
             $table->string('status');
             $table->timestamps();
         });
@@ -25,6 +31,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
     public function down(): void
     {

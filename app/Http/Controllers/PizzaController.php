@@ -9,6 +9,9 @@ use Inertia\Response;
 
 class PizzaController extends Controller
 {
+    /**
+     * @return Response
+     */
     public function index(): Response
     {
         $pizzas = Pizza::all();
@@ -18,6 +21,11 @@ class PizzaController extends Controller
         ]);
     }
 
+    /**
+     * @param Pizza $pizza
+     * 
+     * @return Response
+     */
     public function edit(Pizza $pizza): Response
     {
         return Inertia::render('Pizzas/Edit', [
@@ -25,6 +33,12 @@ class PizzaController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param Pizza $pizza
+     * 
+     * @return void update
+     */
     public function update(Request $request, Pizza $pizza): void
     {
         $pizza->update([
